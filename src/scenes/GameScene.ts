@@ -20,7 +20,7 @@ export class GameScene extends Phaser.Scene {
     }
 
     create () {
-        const map = this.make.tilemap({ key: "map" });
+        const map = this.add.tilemap('level1');
         const tileset = map.addTilesetImage("level1", "overworld");
 
         const floorLayer = map.createStaticLayer("ground", tileset, 0, 0);
