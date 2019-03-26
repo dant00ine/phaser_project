@@ -33,20 +33,21 @@ export class GameScene extends Phaser.Scene {
 
 
         /* SET UP THE CHARACTER ? */
-        // const walkUpConf = {
-        //     key: 'walkUp',
-        //     frames: this.anims.generateFrameNumbers('player1', {start: 0, end: 5}),
-        //     frameRate: 6,
-        //     yoyo: true,
-        //     repeat: -1
-        // };
+        const walkUpConf = {
+            key: 'walkUp',
+            frames: this.anims.generateFrameNumbers('player1', {start: 0, end: 5}),
+            frameRate: 6,
+            yoyo: true,
+            repeat: -1
+        };
 
-        // const walkUpAnim = this.anims.create(walkUpConf);
+        const walkUpAnim = this.anims.create(walkUpConf);
 
-        // const player1 = this.add.sprite(0, 0, 'player1').setScale(4);
+        const player1 = this.physics.add.sprite(0, 0, 'player1') // .setScale(4);
 
-        // player1.play('walkUp');
+        this.physics.add.collider(player1, wallLayer);
 
+        player1.play('walkUp');
     }
 
     update () {
