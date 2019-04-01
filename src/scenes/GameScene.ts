@@ -44,8 +44,9 @@ export class GameScene extends Phaser.Scene {
 
         const player1 = this.add.sprite(0, 0, 'player1').setScale(4);
 
-        player1.play('walkUp');
+        // this.physics.add.collider(player1, wallLayer);
 
+        player1.play('walkUp');
     }
 
     update () {
