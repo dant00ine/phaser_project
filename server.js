@@ -17,4 +17,7 @@ app.use((req, res, next) => {
     next();
 })
 
-app.listen(1338);
+const portNumber = 1338;
+
+console.log("listening on port" + portNumber);
+app.listen(portNumber);

@@ -1,7 +1,5 @@
 import { CST } from "../CST"
 
-// const level1 = require ('../../assets/level1.json');
-
 export class GameScene extends Phaser.Scene {
     constructor () {
         super ({
@@ -30,22 +28,23 @@ export class GameScene extends Phaser.Scene {
 
         const floorLayer = map.createStaticLayer("ground", tileset);
         const wallLayer = map.createStaticLayer("deco", tileset);
+        const collisionLayer = map.createStaticLayer("collision", tileset);
 
 
         /* SET UP THE CHARACTER ? */
-        // const walkUpConf = {
-        //     key: 'walkUp',
-        //     frames: this.anims.generateFrameNumbers('player1', {start: 0, end: 5}),
-        //     frameRate: 6,
-        //     yoyo: true,
-        //     repeat: -1
-        // };
+        const walkUpConf = {
+            key: 'walkUp',
+            frames: this.anims.generateFrameNumbers('player1', {start: 0, end: 5}),
+            frameRate: 6,
+            yoyo: true,
+            repeat: -1
+        };
 
-        // const walkUpAnim = this.anims.create(walkUpConf);
+        const walkUpAnim = this.anims.create(walkUpConf);
 
-        // const player1 = this.add.sprite(0, 0, 'player1').setScale(4);
+        const player1 = this.add.sprite(0, 0, 'player1').setScale(4);
 
-        // player1.play('walkUp');
+        player1.play('walkUp');
 
     }
 
